@@ -28,7 +28,7 @@ unless packages.empty?
   end
 end
 
-gem_package 'rake'
+gem_package 'rake' if node['languages']['ruby']['version'] < '2.0.0'
 
 gem_package 'passenger' do
   action     :install
